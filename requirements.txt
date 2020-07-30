@@ -11,4 +11,6 @@ matplotlib>=1.4.3
 textblob==0.15.3
 nltk
 vader-sentiment==3.2.1.1
+vaderSentiment==3.3.2
+
 
