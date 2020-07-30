@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Sentiment Analysis</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <!-- <script src='main.js'></script> -->
+  <style>
+body {
+	font: 100% Arial, Helvetica, sans-serif;
+	line-height: 1.5;
+	position:"relative";
+    background: linear-gradient(57deg, #00C6A7 , #b7a8ec );
+    
+	
+    width: 1920px auto;
+    height: 1080px auto;
+	margin: 20 auto;
+    padding: 20px;
+}
+
+h1 {text-align: center;}
+p {text-align: center; font-size: 18px;}
+div {text-align: center;font-size: 20px; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+align-content: center;align-items: center;}
+
+button{   
+        font-size: 17px;
+        font-weight: 600;
+        color: white;
+        text-transform: uppercase;
+        background: linear-gradient(57deg, #00C6A7 , #1E4D92 ); 
+        border-radius: 4px 4px 4px 4px;
+        padding: 20px 35px ; 
+        }
+        button:hover{
+  background: linear-gradient(57deg, #1E4D92, #00C6A7 );   
+  transform: scale(1.1);
+  transition: all 0.2s linear;
+}
+  
+
+fieldset{
+  width: 600px;
+  margin: auto;
+  
+}
+
+.body-container{
+  width: 100%
+  margin: 50px auto;
+
+}
+form{
+    border-radius: 4px 4px 4px 4px;
+}
+
+.bigText {
+    height:30px;
+}
+input[type=text]{
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  margin: 12px 0px;
+  outline: none;
+  padding: 12px ;
+  box-sizing: border-box;
+  transition: 3s;
+  text-size-adjust: auto;
+  text-align: center;
+}
+input[type=text]:focus{
+  border-color: dodgerblue;
+  box-shadow: 0px 0px 8px 0px darkgoldenrod;
+}
+  </style>     
+
+</head>
+<body>
+ 
+        <div class="login">
+       <h3><ins>Welcome to</ins></h3>
+       <h1>SENTIMENT 🥰 ANALYZER</h1>
+       <hr color="black" width="50%" align="center">
+       <h2>Natural Language Processing (NLP)</h2>
+       <hr color="black" width="50%" align="center"><br>
+
+       
+     
+          <!-- Main Input For Receiving TEXT INPUT -->
+          <fieldset><emp>Check the sentiments of your favorite songs</emp></fieldset><br>
+          <fieldset>
+            <legend>Enter the Song Lyrics:</legend>
+           <form action="{{ url_for('submit')}}" method="post">
+             <br>
+             
+            <textarea  name="lyric" placeholder="Type Something...." rows="10" cols="109" required="required" ></textarea><br><br>
+            <input type="text"  name="song_title" aria-required="true" size="50" class="" placeholder="Name of the song" required="required"></input><br><br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large"> Submit </button>
+            <button type="reset" class="btn btn-outline-primary btn-block btn-large" value="Clear"  >Clear</button><br><br>
+            <a href="{{ url_for('home')}}" Type="button" class="btn btn-outline-danger btn-block btn-large" >Reset</a>
+         </form>
+         </fieldset>
+     
+        <br>
+        <br>
+        <fieldset>
+          <legend>Sentiment Analysis</legend>
+          {% if compound %}
+          <p>The compound score of</p> <b>'{{ song_name}}'</b> <p>is <b>{{ compound }}%</b></p> <br>
+          <p>{{text}}</p>
+          <p>with a Polarity of </p>{{polarity}}%<br>
+          {% else %}
+          <p></p>
+          {% endif %}<br>
+          {{table}}<br>
+          <br>
+          {{maximum}}<br>
+          {{minimum}}
+        </fieldset>
+        <br>
+        <br>
+        <p><b>Note:</b>This model was built by using the NLTK library. You can analyze any textual data by using this model.</p>
+        <emp>🌟Subscribe to my <a href="https://youtu.be/NiFN960s_z0">YouTube</a> channel.🌟</emp>
+        <br><br>
+        
+     
+      </div>
+      <p><b>Download the source code from my <a href = "https://github.com/rohandreamerz/project">GitHub repository.</a> Follow me on<a href = "https://www.linkedin.com/in/rohaankamble/"> LinkedIn.</a></b></p>
+
+<br>
+
+
+<p>🡲 Designed by <b>Rohan Kamble 🡰</b></p>
+</body>
+</html>
+    
