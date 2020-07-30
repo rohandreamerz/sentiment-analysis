@@ -8,7 +8,6 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from collections import Counter
-import mpld3
 nltk.download('stopwords')
 nltk.download('punkt')
 set(stopwords.words('english'))
