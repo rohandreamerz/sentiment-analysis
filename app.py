@@ -8,6 +8,7 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from collections import Counter
+import mpld3
 nltk.download('stopwords')
 nltk.download('punkt')
 set(stopwords.words('english'))
@@ -36,13 +37,13 @@ def submit():
     compounds = round((1 + score['compound'])/2, 3)
                                                                         
     if  score['neg']>score['pos']:
-        texts="The lyrics have a Negative sentiment"
+        texts="The lyrics have a Negative sentiment 😥"
                                     
     elif score['neg'] < score['pos']:
-        texts="The lyrics have a Positive Sentiment"
+        texts="The lyrics have a Positive Sentiment 🙂"
                                     
     else: 
-        texts="The lyrics have a Neutral Sentiment"    
+        texts="The lyrics have a Neutral Sentiment 😐"    
     
     #tokenize
     tokenized_lyrics = word_tokenize(processed_lyrics, "english")
@@ -75,10 +76,11 @@ def submit():
     colors=['red','green','orange','yellow','magenta','cyan','black']
     ax1.bar(a.keys(), a.values(),color=colors)
     fig.autofmt_xdate()
-    plt.savefig('graph.png')
+    #plt.savefig('graph.png')
     plt.title('Emotions in the song', fontdict=None, loc='center', pad=None)
     plt.show()
     
+   
     
     Maxa=max(emotion_list, key = emotion_list.count)
     mam = "The dominant emotion in the song is '{}'".format(Maxa.upper())
@@ -88,7 +90,7 @@ def submit():
     blob = TextBlob(processed_lyrics)
     polarity = blob.sentiment.polarity
   
-    return render_template('index.html', song_name='{}'.format(title), compound="{}".format(round(compounds*100,2)), text='{}'.format(texts),table='The emotions in the song are:\n {}'.format(b),maximum='{}'.format(mam),minimum='{}'.format(mim),polarity='{}'.format(round(polarity*100,2)))
+    return render_template('submit.html', song_name='{}'.format(title), compound="{}".format(round(compounds*100,2)), text='{}'.format(texts),table='The emotions in the song are:\n {}'.format(b),maximum='{}'.format(mam),minimum='{}'.format(mim),polarity='{}'.format(round(polarity*100,2)))
 
 if __name__ == "__main__":
     app.run(debug=True, threaded=True)
