@@ -9,17 +9,26 @@
     <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <!-- <script src='main.js'></script> -->
-  <style>
+  <style type="text/css">
+
+  .login{
+    position: relative;
+
+      }
+
 body {
-	font: 100% Arial, Helvetica, sans-serif;
-	line-height: 1.5;
-	position:"relative";
-    background: linear-gradient(57deg, #00C6A7 , #b7a8ec );
+	 font: 100% Arial, Helvetica, sans-serif;
+	 line-height: 1.5;
+	  position:"relative";
+    /* background: linear-gradient(57deg, #00C6A7 , #b7a8ec ); */
+    background-image: url('./images/image2.png');
+    background-size: cover;
+    background-attachment: fixed;
     
 	
     width: 1920px auto;
     height: 1080px auto;
-	margin: 20 auto;
+    margin: 20 auto;
     padding: 20px;
 }
 
@@ -69,7 +78,7 @@ input[type=text]{
   outline: none;
   padding: 12px ;
   box-sizing: border-box;
-  transition: 3s;
+  transition: 2s;
   text-size-adjust: auto;
   text-align: center;
 }
@@ -98,7 +107,7 @@ input[type=text]:focus{
            <form action="{{ url_for('submit')}}" method="post">
              <br>
              
-            <textarea  name="lyric" placeholder="Type Something...." rows="10" cols="109" required="required" ></textarea><br><br>
+            <textarea  name="lyric" placeholder="Type Something...." rows="7" cols="109" required="required" ></textarea><br><br>
             <input type="text"  name="song_title" aria-required="true" size="50" class="" placeholder="Name of the song" required="required"></input><br><br>
 
             <button type="submit" class="btn btn-primary btn-block btn-large"> Submit </button>
@@ -120,6 +129,7 @@ input[type=text]:focus{
           {% endif %}<br>
           {{table}}<br>
           <br>
+         
           {{maximum}}<br>
           {{minimum}}
         </fieldset>
