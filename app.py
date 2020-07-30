@@ -9,8 +9,9 @@ from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 from collections import Counter
 nltk.download('stopwords')
-
+nltk.download('punkt')
 set(stopwords.words('english'))
+
 app = Flask(__name__)
 
 @app.route('/')
