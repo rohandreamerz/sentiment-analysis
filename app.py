@@ -75,7 +75,7 @@ def submit():
     colors=['red','green','orange','yellow','magenta','cyan','black']
     ax1.bar(a.keys(), a.values(),color=colors)
     fig.autofmt_xdate()
-    #plt.savefig('graph.png')
+    plt.savefig('graph.png')
     plt.title('Emotions in the song', fontdict=None, loc='center', pad=None)
     plt.show()
     
