@@ -88,8 +88,15 @@ def submit():
     
     blob = TextBlob(processed_lyrics)
     polarity = blob.sentiment.polarity
+    
+    if polarity>0:
+        outputs = "Happy Song"
+    elif polarity==0:
+        outputs = "Neutral Song"
+    else:
+        outputs = "Sad Song"
   
-    return render_template('submit.html', song_name='{}'.format(title), compound="{}".format(round(compounds*100,2)), text='{}'.format(texts),table='The emotions in the song are:\n {}'.format(b),maximum='{}'.format(mam),minimum='{}'.format(mim),polarity='{}'.format(round(polarity*100,2)))
+    return render_template('submit.html', song_name='{}'.format(title), compound="{}".format(round(compounds*100,2)), text='{}'.format(texts),table='The emotions in the song are:\n {}'.format(b),maximum='{}'.format(mam),minimum='{}'.format(mim),polarity='{}'.format(round(polarity*100,2)),output='{}'.format(outputs))
 
 if __name__ == "__main__":
     app.run(debug=True, threaded=True)
