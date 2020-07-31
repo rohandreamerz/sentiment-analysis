@@ -89,12 +89,16 @@ def submit():
     blob = TextBlob(processed_lyrics)
     polarity = blob.sentiment.polarity
     
-    if polarity>0:
-        outputs = "Happy Song"
+    if (polarity>0 and polarity<0.25):
+        outputs = " Sad Song 😥"
+    elif (polarity>0.25 and polarity<0.5):
+        outputs = " Cheerful Song 🙂"
+    elif polarity>0.5:
+        outputs = "Happy Song 😀"        
     elif polarity==0:
-        outputs = "Neutral Song"
+        outputs = "Neutral Song 😐"
     else:
-        outputs = "Sad Song"
+        outputs = " Very Sad Song 🥺"
   
     return render_template('submit.html', song_name='{}'.format(title), compound="{}".format(round(compounds*100,2)), text='{}'.format(texts),table='The emotions in the song are:\n {}'.format(b),maximum='{}'.format(mam),minimum='{}'.format(mim),polarity='{}'.format(round(polarity*100,2)),output='{}'.format(outputs))
 
