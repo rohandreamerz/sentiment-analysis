@@ -26,6 +26,10 @@ body {
     /* background-image: url('./images/image2.png'); */
     /* background-size: cover;
     background-attachment: fixed; */
+    /* background-size: cover;
+    background-image: url("bg.png");
+    background-repeat: no-repeat; */
+    /* background-blend-mode: darken; */
 }
 
 h1 {text-align: center;}
@@ -96,36 +100,61 @@ textarea:focus{
   transition: all 0.1s linear;
 }
 
-@media screen and (max-width:959px;) {
+.nav-bar{
+display: flex;
+background-color: black;
+margin-bottom: 20px;
+/* align-items: center; */
+/* justify-content: center; */
+position: sticky;
+cursor: pointer;
+text-align: center;
 
-  .login{
+
+}
+
+
+.nav-list{
     width: 100%;
-  }
-  fieldset{
-    width: 50%;
-  }
-  form{
-    width: 50%;
-  }
-  }
-  @media screen and (max-width:640px;) {
-
-.login{
-  width: 100%;
-}
-fieldset{
-  width: 100%;
-}
-form{
-  width: 100%;
-}
-}
+    display: flex;
+    /* background-color: violet; */
+    align-items: center;
+    justify-content: center;
 }
 
-  </style>     
+.nav-list li{
+    list-style: none;
+    padding: 25px 30px;
+    text-align: center;
+}
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-size: 20px;
+text-align: center;
+}
+.nav-list li a:hover {
+color: grey;
+transform: scale(1.2);
+transition-duration: 5ms;
+
+ </style>     
 
 </head>
 <body>
+
+  <nav class="nav-bar">
+    
+    <ul class="nav-list">
+        
+        <li><a href="https://linkedin.com/in/rohaankamble/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/rohandreamerz/sentiment-analysis"target="_blank">GitHub</a></li>
+        <li><a href="https://www.facebook.com/jimmyydofficial/"target="_blank">Facebook</a></li>
+        <li><a href="https://instagram.com/rohandreamerz"target="_blank">Instagram</a></li>
+
+    </ul>
+
+</nav>
  
       <div class="login">
        <h3><ins>Welcome to</ins></h3>
@@ -192,4 +221,3 @@ form{
 </div>
 </body>
 </html>
-    
