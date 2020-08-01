@@ -23,13 +23,10 @@ body {
     background: linear-gradient(57deg, #00C6A7 , #b7a8ec );
     /* background-image: url('./images/image2.png'); */
     /* background-size: cover;
-    background-attachment: fixed; */
+    background-image: url("bg.png");
+    background-repeat: no-repeat; */
+  }
     
-	
-    width: 1920px auto;
-    height: 1080px auto;
-	  margin: 20 auto;
-    padding: 20px;
 }
 
 h1 {text-align: center;}
@@ -61,7 +58,6 @@ fieldset{
 
 .body-container{
   width: 100%
-  margin: 50px auto;
 
 }
 form{
@@ -105,11 +101,60 @@ textarea:focus{
   transform: scale(1.1);
   transition: all 0.1s linear;
 }
+.nav-bar{
+display: flex;
+background-color: black;
+margin-bottom: 20px;
+/* align-items: center; */
+/* justify-content: center; */
+position: sticky;
+cursor: pointer;
+text-align: center;
+
+
+}
+
+
+.nav-list{
+    width: 100%;
+    display: flex;
+    /* background-color: violet; */
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li{
+    list-style: none;
+    padding: 25px 30px;
+    text-align: center;
+}
+.nav-list li a {
+text-decoration: none;
+color: white;
+font-size: 20px;
+text-align: center;
+}
+.nav-list li a:hover {
+color: grey;
+transform: scale(1.2);
+transition-duration: 5ms;
 
   </style>     
 
 </head>
 <body>
+  <nav class="nav-bar">
+    
+    <ul class="nav-list">
+        
+        <li><a href="https://linkedin.com/in/rohaankamble/" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/rohandreamerz/sentiment-analysis"target="_blank">GitHub</a></li>
+        <li><a href="https://www.facebook.com/jimmyydofficial/"target="_blank">Facebook</a></li>
+        <li><a href="https://instagram.com/rohandreamerz"target="_blank">Instagram</a></li>
+
+    </ul>
+
+</nav>
  
         <div class="login">
        <h3><ins>Welcome to</ins></h3>
@@ -166,4 +211,3 @@ textarea:focus{
 <p>🡲 Designed by <b>Rohan Kamble 🡰</b></p>
 </body>
 </html>
-    
