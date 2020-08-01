@@ -91,9 +91,9 @@ def submit():
     
     if (polarity>0 and polarity<0.25):
         outputs = " Sad Song 😥"
-    elif (polarity>0.25 and polarity<0.5):
+    elif (polarity>=0.25 and polarity<0.5):
         outputs = " Cheerful Song 🙂"
-    elif polarity>0.5:
+    elif polarity>=0.5:
         outputs = "Happy Song 😀"        
     elif polarity==0:
         outputs = "Neutral Song 😐"
